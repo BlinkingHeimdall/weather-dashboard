@@ -7,8 +7,8 @@ let submitBtnHandler = function(event) {
     let currentCity = cityInputEl.value.trim();
 
     if (currentCity) {
-        getWeather(currentCity);
-        cityInputEl.value="";
+        getCity(currentCity);
+        cityInputEl.value = "";
     }
     else
     {
@@ -16,11 +16,26 @@ let submitBtnHandler = function(event) {
     }
 }
 
-let getWeather = function(currentCity) {
-    let apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&appid=15022751718f984d0ffd39a5ca1c8332";
+let getCity = function(currentCity) {
+    let apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&units=imperialappid=15022751718f984d0ffd39a5ca1c8332";
     fetch(apiURL).then(function(response) {
         response.json().then(function(data) {
-            console.log(data);
+            console.log(data.coord.lat);
+            console.log(data.coord.lon);
+            let lat = data.coord.lat;
+            let lon = data.coord.lon;
+
+            let apiURL2 = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=15022751718f984d0ffd39a5ca1c8332";
+
+            fetch(apiURL2).then(function(response) {
+                response.json().then(function(data) {
+                    console.log(data);
+                console.log(data.current.temp);
+                console.log(data.current.wind_speed);
+                console.log(data.current.humidity);
+                console.log(data.current.uvi);
+                })
+            })
         });
     });
 };
