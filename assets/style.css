@@ -20,12 +20,13 @@
     color: #0d851d;
 }
 
-.btn {
+#search {
     margin: 5px;
     width: 220px;
     background-color: #f5faaa;
     color: #0d851d;
     border-radius: 5px;
+    border-color: #0d851d;
 }
 
 .input {
@@ -57,7 +58,7 @@
     margin: 8px;
 }
 
-.city-list {
+.city-btn {
     background-color: #f5faaa;
     width: 210px;
     height: 30px;
@@ -66,6 +67,7 @@
     padding: 2px;
     border-radius: 5px;
     color: #0d851d;
+    border-color: #0d851d;
 }
 
 #saved-cities {
