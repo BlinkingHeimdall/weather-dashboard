@@ -1,17 +1,28 @@
-document.getElementById("search").addEventListener("click", function(event) {
+let cityInput = document.querySelector('.input');
+let submitBtn = document.querySelector('#search');
+
+let submitBtnHandler = function(event) {
     event.preventDefault();
-    console.log("click click");
-})
+    
+    let currentCity = cityInputEl.value.trim();
 
-
-
-
-
-
-// event listener for all of the city buttons after they are created 
-btns = document.getElementsByClassName("city-btn");
-for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function () {
-        console.log("i was clicked");
-    })
+    if (currentCity) {
+        getWeather(currentCity);
+        cityInputEl.value="";
+    }
+    else
+    {
+        alert("Please Enter a City");
+    }
 }
+
+let getWeather = function(currentCity) {
+    let apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&appid=15022751718f984d0ffd39a5ca1c8332";
+    fetch(apiURL).then(function(response) {
+        response.json().then(function(data) {
+            console.log(data);
+        });
+    });
+};
+
+submitBtn.addEventListener("click", submitBtnHandler)
