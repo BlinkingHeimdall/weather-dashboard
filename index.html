@@ -17,7 +17,7 @@
         <div id="dashboard-heading"><h1>Weather Dashboard</h1></div>
     </header>
 
-    <div class="row">
+    <div class="row sun">
         <div class="col-3">
             <div class="card">
                 <h3>Search by City:</h3>
@@ -39,10 +39,10 @@
 <div class="col-9">
     <div id="city-container" class="row align-content-left border border-dark">
         <h3 class="current-city">Current Selected City  <span class="oi oi-cloudy"></span></h3>
-        <div class="row">Temperature:</div>
-        <div class="row">Wind:</div>
-        <div class="row">Humidity</div>
-        <div class="row">UV Index:<span id="uv"></span></div>
+        <div class="row" id="temp">Temperature:</div>
+        <div class="row" id="wind">Wind:</div>
+        <div class="row" id="humidity">Humidity</div>
+        <div class="row" id="uvi">UV Index:<span id="uv"></span></div>
 
     </div>
 
@@ -50,10 +50,10 @@
 
 <h4 class="forecast">5 day Forecast:</h4> 
 <div id="day-1" class="col-2">Day one
-    <div id="row">Icon</div>
-    <div id="row">Temp:</div>
-    <div id="row">Wind</div>
-    <div id="row">Humidity</div>
+    <div id="row" id="day1icon">Icon:</div>
+    <div id="row" id="day1temp">Temp:</div>
+    <div id="row" id="day1wind">Wind:</div>
+    <div id="row" id="day1humid">Humidity:</div>
 </div>
 <div id="day-2" class="col-2">Day two</div>
 <div id="day-3" class="col-2">Day three</div>
@@ -63,9 +63,6 @@
 
     </div>  
 </div>
-
-
-
 
 
     <script src="assets/script.js"></script>
