@@ -1,11 +1,11 @@
-let cityInput = document.querySelector('.input');
-let submitBtn = document.querySelector('#search');
-let currentCityEl = document.querySelector("current-city")
+var cityInput = document.querySelector('.input');
+var submitBtn = document.querySelector('#search');
+var currentCityEl = document.querySelector("current-city")
 
-let submitBtnHandler = function(event) {
+var submitBtnHandler = function(event) {
     event.preventDefault();
     
-    let currentCity = cityInputEl.value.trim();
+    var currentCity = cityInputEl.value.trim();
 
     if (currentCity) {
         getWeather(currentCity);
@@ -18,15 +18,15 @@ let submitBtnHandler = function(event) {
     }
 }
 
-let getWeather = function(currentCity) {
-    let apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&units=imperialappid=15022751718f984d0ffd39a5ca1c8332";
+var getWeather = function(currentCity) {
+    var apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&units=imperialappid=15022751718f984d0ffd39a5ca1c8332";
     fetch(apiURL).then(function(response) {
         response.json().then(function(data) {
 
-            let lat = data.coord.lat;
-            let lon = data.coord.lon;
+            var lat = data.coord.lat;
+            var lon = data.coord.lon;
 
-            let apiURL2 = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=15022751718f984d0ffd39a5ca1c8332";
+            var apiURL2 = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=15022751718f984d0ffd39a5ca1c8332";
 
             fetch(apiURL2).then(function(response) {
                 response.json().then(function(data) {
@@ -35,42 +35,50 @@ let getWeather = function(currentCity) {
                 var iconLink = "https://openweathermap.org/img/w/" + icon + ".png";
                 console.log(iconLink);
 
+                var tempElOne = document.getElementById("day1temp");
+                tempElOne.textContent = "Temp: " + data.daily[0].temp.day + " deg F"
 
+                var windElOne = document.getElementById("day1wind");
+                windElOne.textContent = "Wind: " + data.daily[0].wind_speed + " mph";
 
+                var humidElOne = document.getElementById("day1humid");
+                humidElOne.textContent = "Humidity: " + data.daily[0].humidity + " %";
 
+                // display day 2
+                var tempElTwo = document.getElementById("day2temp");
+                tempElTwo.textContent = "Temp: " + data.daily[1].temp.day + " deg F"
 
-                // current temp added to html
-                var currentTempEl = document.getElementById("temp");
-                currentTempEl.textContent = "Temperature: " + data.current.temp + " Degrees";
+                var windElTwo = document.getElementById("day2wind");
+                windElTwo.textContent = "Wind: " + data.daily[1].wind_speed + " mph";
 
-                // wind speed
-                var currentWindEl = document.getElementById("wind");
-                currentWindEl.textContent = "Wind: " + data.current.wind_speed + " MPH"
+                var humidElTwo = document.getElementById("day2humid");
+                humidElTwo.textContent = "Humidity: " + data.daily[1].humidity + " %";
 
-                //humidity
-                var currentHumidityEl = document.getElementById("humidity");
-                currentHumidityEl.textContent = "Humidity: " + data.current.humidity + " %"
+                //display day 3
+                var tempElThree = document.getElementById("day3temp");
+                tempElThree.textContent = "Temp: " + data.daily[2].temp.day + " deg F"
 
-                // uv index
-                var uviEl = document.getElementById("uvi");
-                uviEl.textContent = "UV Index: " + data.current.uvi 
+                var windElThree = document.getElementById("day3wind");
+                windElThree.textContent = "Wind: " + data.daily[2].wind_speed + " mph";
 
-                console.log(data.daily[0])
+                var humidElThree = document.getElementById("day3humid");
+                humidElThree.textContent = "Humidity: " + data.daily[2].humidity + " %";
 
-                var tempEl = document.getElementById("day1temp");
-                tempEl.textContent = "Temp: " + data.daily[0].temp.day + " deg F"
+                // display day 4
+                var tempElFour = document.getElementById("day4temp");
+                tempElFour.textContent = "Temp: " + data.daily[3].temp.day + " deg F"
 
-                var windEl = document.getElementById("day1wind");
-                windEl.textContent = "Wind: " + data.daily[0].wind_speed + " mph";
+                var windElFour = document.getElementById("day4wind");
+                windElFour.textContent = "Wind: " + data.daily[3].wind_speed + " mph";
 
-                var humidEl = document.getElementById("day1humid");
-                humidEl.textContent = "Humidity: " + data.daily[0].humidity + " %"
+                var humidElFour = document.getElementById("day4humid");
+                humidElFour.textContent = "Humidity: " + data.daily[3].humidity + " %";
                 })
             })
         });
-        let displayWeather = function (getWeather) {
+        var displayWeather = function (getWeather) {
 
-            
+
         }
     });
 };
