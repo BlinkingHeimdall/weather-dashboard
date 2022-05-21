@@ -25,7 +25,7 @@
     color: #709409;
 }
 
-#search {
+#search-btn {
     margin: 5px;
     width: 220px;
     background-color: #f5faaa;
@@ -76,9 +76,6 @@
     border-color: #709409;
 }
 
-#saved-cities {
-    list-style-type: none;
-}
 
 #city-list {
     list-style-type: none;
@@ -119,4 +116,25 @@
     margin: 10px;
     color: #709409;
     background-color: #f2c600;
+}
+
+.icon {
+    width: 3px;
+    height: 3px;
+}
+
+.favorable {
+background-color: green;
+color: white;
+width: 150px;
+}
+
+.moderate {
+background-color: orange;
+color: white;
+}
+
+.severe {
+background-color: red;
+color: white;
 }
