@@ -5,33 +5,33 @@
 
 #dashboard-heading {
     text-align: center;
-    background-color: #cdb904;
-    color: #0d851d;
+    background-color: #f2c600;
+    color: #709409;
     height: 75px;
     margin-bottom: 10px;
 }
 
 .card {
-    background-color: #cdb904;
-    border-bottom: 2px solid #0d851d;
-    border-top: #0d851d;
-    border-right: #0d851d;
-    border-left: #0d851d;
+    background-color: #f2c600;
+    border-bottom: 2px solid #709409;
+    border-top: #709409;
+    border-right: #709409;
+    border-left: #709409;
     margin: 10px;
     padding: 5px;
     padding-bottom: 20px;
     width: 240px;
     border-radius: 0px;
-    color: #0d851d;
+    color: #709409;
 }
 
 #search {
     margin: 5px;
     width: 220px;
     background-color: #f5faaa;
-    color: #0d851d;
+    color: #709409;
     border-radius: 5px;
-    border-color: #0d851d;
+    border-color: #709409;
 }
 
 .input {
@@ -41,7 +41,7 @@
     height: 30px;
     width: 220px;
     border-radius: 5px;
-    border-color: #0d851d;
+    border-color: #709409;
 }
 
 .input[type='text'], textarea{
@@ -56,8 +56,8 @@
     width: 800px;
     margin: 10px;
     padding: 10px;
-    color: #0d851d;
-    background-color: #cdb904;
+    color: #709409;
+    background-color: #f2c600;
 }
 
 .forecast {
@@ -72,47 +72,51 @@
     margin: 10px;
     padding: 2px;
     border-radius: 5px;
-    color: #0d851d;
-    border-color: #0d851d;
+    color: #709409;
+    border-color: #709409;
 }
 
 #saved-cities {
     list-style-type: none;
 }
 
+#city-list {
+    list-style-type: none;
+}
+
 #uv {
     height: 20px;
     width: 20px;
-    background-color: #cdb904;
+    background-color: #f2c600;
     margin: 3px;
 }
 
 #day-1 {
     margin: 10px;
-    color: #0d851d;
-    background-color: #cdb904;
+    color: #709409;
+    background-color: #f2c600;
 }
 
 #day-2 {
     margin: 10px;
-    color: #0d851d;
-    background-color: #cdb904;
+    color: #709409;
+    background-color: #f2c600;
 }
 
 #day-3 {
     margin: 10px;
-    color: #0d851d;
-    background-color: #cdb904;
+    color: #709409;
+    background-color: #f2c600;
 }
 
 #day-4 {
     margin: 10px;
-    color: #0d851d;
-    background-color: #cdb904;
+    color: #709409;
+    background-color: #f2c600;
 }
 
 #day-5 {
     margin: 10px;
-    color: #0d851d;
-    background-color: #cdb904;
+    color: #709409;
+    background-color: #f2c600;
 }

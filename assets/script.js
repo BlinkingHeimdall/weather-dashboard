@@ -30,9 +30,15 @@ var getWeather = function(currentCity) {
 
             fetch(apiURL2).then(function(response) {
                 response.json().then(function(data) {
+
+                    var savedCityObject = {
+                        city: currentCity,
+                        url: apiUrl2
+                    }
+                    localStorage.setItem("savedCityObject", JSON.stringify(savedCityObject));
                     // weather icon
                 var icon= data.current.weather[0].icon;
-                var iconLink = "https://openweathermap.org/img/w/" + icon + ".png";
+                var iconLink = "https://openweathermap.org/img/w/" + data.current.weather[0].icon + ".png";
                 console.log(iconLink);
 
                 var tempElOne = document.getElementById("day1temp");
@@ -83,4 +89,31 @@ var getWeather = function(currentCity) {
     });
 };
 
-submitBtn.addEventListener("click", submitBtnHandler)
+var getSavedCities = function(savedCityObject) {
+
+
+    var savedCityObject = localStorage.getItem("savedCityObject");
+
+
+
+    if (savedCityObject) {
+
+
+    var savedCity = JSON.parse(localStorage.getItem("savedCityObject"));
+    console.log(savedCity.city);
+    console.log(savedCity.url);
+    }
+
+    getSavedCities();
+
+    var savedCityEl = document.querySelector("#city-list");
+        var cityListEl = document.createElement("li");
+        cityListEl.className = "saved-city";
+        var savedCityButton = document.createElement("btn");
+        savedCityButton.textContent = "test two";
+        savedCityButton.className = "city-btn";
+        cityListEl.appendChild(savedCityButton);
+        savedCityEl.appendChild(cityListEl);
+}
+
+submitBtn.addEventListener("click", submitBtnHandler);
