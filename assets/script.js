@@ -77,20 +77,20 @@ var getWeather = function (currentCity) {
                     currentWindElement.textContent = "Wind: " + data.current.wind_speed + " MPH"
 
                     // this adds humidity to the site
-                    var currentHumidityEl = document.getElementById("humidity");
-                    currentHumidityEl.textContent = "Humidity: " + data.current.humidity + " %"
+                    var currentHumidityElement = document.getElementById("humidity");
+                    currentHumidityElement.textContent = "Humidity: " + data.current.humidity + " %"
 
                     //this adds the UV index to the site
-                    var uviEl = document.getElementById("uvi");
+                    var uviElement = document.getElementById("uvi");
 
                     // this works teh styling to the css for the UV index
-                    uviEl.textContent = "UV Index: " + data.current.uvi
+                    uviElement.textContent = "UV Index: " + data.current.uvi
                     if (data.current.uvi > 6) {
-                        uviEl.setAttribute("class", "severe");
+                        uviElement.setAttribute("class", "severe");
                     } else if (data.current.uvi === 5) {
-                        uviEl.setAttribute("class", "moderate");
+                        uviElement.setAttribute("class", "moderate");
                     } else if (data.current.uvi < 5) {
-                        uviEl.setAttribute("class", "favorable");
+                        uviElement.setAttribute("class", "favorable");
                     }
 
 
