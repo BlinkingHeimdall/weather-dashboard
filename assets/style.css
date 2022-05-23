@@ -25,7 +25,7 @@
     color: #709409;
 }
 
-#search-button {
+#search-btn {
     margin: 5px;
     width: 220px;
     background-color: #f5faaa;
@@ -58,13 +58,23 @@
     padding: 10px;
     color: #709409;
     background-color: #f2c600;
+    border-color: #709409;
+    border: solid 3px;
+}
+
+h4 {
+    margin: 10px;
+    color: #709409;
+    background-color: #f2c600;
+    border-color: #709409;
+    border: solid 3px;
 }
 
 .forecast {
     margin: 8px;
 }
 
-.city-button {
+.city-btn {
     background-color: #f5faaa;
     width: 210px;
     height: 30px;
@@ -92,30 +102,40 @@
     margin: 10px;
     color: #709409;
     background-color: #f2c600;
+    border-color: #709409;
+    border: solid 3px;
 }
 
 #day-2 {
     margin: 10px;
     color: #709409;
     background-color: #f2c600;
+    border-color: #709409;
+    border: solid 3px;
 }
 
 #day-3 {
     margin: 10px;
     color: #709409;
     background-color: #f2c600;
+    border-color: #709409;
+    border: solid 3px;
 }
 
 #day-4 {
     margin: 10px;
     color: #709409;
     background-color: #f2c600;
+    border-color: #709409;
+    border: solid 3px;
 }
 
 #day-5 {
     margin: 10px;
     color: #709409;
     background-color: #f2c600;
+    border-color: #709409;
+    border: solid 3px;
 }
 
 .icon {
