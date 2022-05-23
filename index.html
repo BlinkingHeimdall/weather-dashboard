@@ -4,91 +4,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
     <link rel="stylesheet" href="assets/style.css">
     <title>Weather Dashboard</title>
 </head>
-
 <body>
-    
+
     <header>
         <div id="dashboard-heading"><h1>Weather Dashboard</h1></div>
     </header>
+
+
 
     <div class="row sun">
         <div class="col-3">
             <div class="card">
                 <h3>Search by City:</h3>
-                <form class="form">
+                    <form class="form">
                     <input name="city" type="text" class="input"/>
-                    <button type="submit" id="search-btn">Search</button>
-                </form>
+                    <button type="submit" id="search-btn">Search</button> 
+                    </form>
+
             </div>
+
+            <section class="saved-city-wrapper">
+            <ul id="city-list">
+
+            </ul>
+            </section>
         </div>
-    </div>
-
-    <!-- <section class="saved-city-wrapper">
-        <ul id="city-list">
-        </ul>
-    </section> -->
 
 
+        <div class="col-9">
+            <div id="city-container" class="row align-content-left border border-dark">
+                <h3 id="current-city">Current Selected City</h3>
+                <div class="row" id="date"></div>
+                <div class="row" id="temp">Temperature:</div>
+                <div class="row" id="wind">Wind:</div>
+                <div class="row" id="humidity">Humidity:</div>
+                <div class="row"><span id="uvi"></span></div>
+                
+            </div>
 
-<div class="col-9">
-    <div id="city-container" class="row align-content-left border border-dark">
-        <h3 class="current-city">Current Selected City</h3>
-        <div class="row" id="date">Date:</div>
-        <div class="row" id="temp">Temperature:</div>
-        <div class="row" id="wind">Wind:</div>
-        <div class="row" id="humidity">Humidity</div>
-        <div class="row"><span id="uvi"></span></div>
-    </div>
+    <div class="row align-content-left"> 
+        
+        <h4 class="forecast">5 day Forecast:</h4> 
+        <div id="day-1" class="col-2"><h6 id="forIcon1"></h6>
+            <div class="row" id="day1icon"></div>
+            <div class="row" id="day1date">Date:</div>
+            <div class="row" id="day1temp">Temp:</div>
+            <div class="row" id="day1wind" >Wind:</div>
+            <div class="row" id="day1humid">Humidity:</div>
+        </div>
+        <div id="day-2" class="col-2"><h6 id = "forIcon2"></h6>
+            <div class="row" id="day2icon"></div>
+            <div class="row" id="day2date">Date:</div>
+            <div class="row" id="day2temp">Temp:</div>
+            <div class="row" id="day2wind">Wind:</div>
+            <div class="row" id="day2humid">Humidity</div>
+        </div>    
+        <div id="day-3" class="col-2"><h6 id = "forIcon3"></h6>
+            <div class="row" id="day3icon"></div>
+            <div class="row" id="day3date">Date;</div>
+            <div class="row" id="day3temp">Temp:</div>
+            <div class="row" id="day3wind">Wind:</div>
+            <div class="row" id="day3humid">Humidity</div>
+        </div>  
+        <div id="day-4" class="col-2"><h6 id = "forIcon4"></h6>
+            <div class="row" id="day4icon"></div>
+            <div class="row" id="day4date">Date:</div>
+            <div class="row" id="day4temp">Temp:</div>
+            <div class="row" id="day4wind">Wind:</div>
+            <div class="row" id="day4humid">Humidity</div>
+        </div>  
+        <div id="day-5" class="col-2"><h6 id = "forIcon5"></h6>
+            <div class="row" id="day5icon"></div>
+            <div class="row" id="day5date">Date:</div>
+            <div class="row" id="day5temp">Temp:</div>
+            <div class="row" id="day5wind">Wind:</div>
+            <div class="row" id="day5humid">Humidity</div>
+        </div>  
+        </div>
+            </div>  
+        </div>
 
-<div class="row align-content-left"> 
-    <h4 class="forecast">5 day Forecast:</h4> 
-    <div id="day-1" class="col-2">Day one
-        <div id="row" id="day1icon">Icon:</div>
-        <div class="row" id="day1date">Date:</div>
-        <div id="row" id="day1temp">Temp:</div>
-        <div id="row" id="day1wind">Wind:</div>
-        <div id="row" id="day1humid">Humidity:</div>
-    </div>
-    <div id="day-2" class="col-2">Day two
-        <div class="row" id="day2icon">Icon:</div>
-        <div class="row" id="day2date">Date:</div>
-        <div class="row" id="day2temp">Temp:</div>
-        <div class="row" id="day2wind">Wind:</div>
-        <div class="row" id="day2humid">Humidity</div>
-    </div>    
-    <div id="day-3" class="col-2">Day three
-        <div class="row" id="day3icon">Icon:</div>
-        <div class="row" id="day3date">Date:</div>
-        <div class="row" id="day3temp">Temp:</div>
-        <div class="row" id="day3wind">Wind:</div>
-        <div class="row" id="day3humid">Humidity</div>
-    </div>  
-    <div id="day-4" class="col-2">Day four
-        <div class="row" id="day4icon">Icon:</div>
-        <div class="row" id="day4date">Date:</div>
-        <div class="row" id="day4temp">Temp:</div>
-        <div class="row" id="day4wind">Wind:</div>
-        <div class="row" id="day4humid">Humidity</div>
-    </div>  
-    <div id="day-5" class="col-2">Day five
-        <div class="row" id="day5icon">Icon:</div>
-        <div class="row" id="day5date">Date:</div>
-        <div class="row" id="day5temp">Temp:</div>
-        <div class="row" id="day5wind">Wind:</div>
-        <div class="row" id="day5humid">Humidity</div>
-    </div> 
-</div> 
-</div> 
-
-
-
-    <script src="assets/script.js"></script>
-
+<script src = "assets/script.js"></script>   
 </body>
 </html>
