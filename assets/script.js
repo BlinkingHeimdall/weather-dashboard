@@ -28,7 +28,7 @@ var submitBtnHandler = function (event) {
 var getWeather = function (currentCity) {
 
     // this lets users select a city and create the URL for it
-    var weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&units=imperial&appid=15022751718f984d0ffd39a5ca1c8332";
+    var weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&units=imperial&appid=f26eee1a1fed2268c3e36fe1fd742d59";
 
     // this fetch gets the info for the URL above
     fetch(weatherUrl).then(function (response) {
@@ -37,7 +37,7 @@ var getWeather = function (currentCity) {
             var lat = data.coord.lat;
             var lon = data.coord.lon;
 
-            var weatherUrl2 = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=15022751718f984d0ffd39a5ca1c8332";
+            var weatherUrl2 = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=f26eee1a1fed2268c3e36fe1fd742d59";
             fetch(weatherUrl2).then(function (response) {
                 response.json().then(function (data) {
                     
