@@ -46,7 +46,7 @@ var getWeather = function (currentCity) {
                     }
 
                     // this converts to current date
-                    var unixTimeStamp = data.current.dt
+                    // var unixTimeStamp = data.current.dt
                     var date = new Date(unixTimeStamp * 1000);
                     var formDate = "Date: " +date.getDate()+
                     "/"+(date.getMonth()+1)+
