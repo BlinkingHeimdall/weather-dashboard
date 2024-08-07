@@ -46,11 +46,11 @@ var getWeather = function (currentCity) {
                     }
 
                     // this converts to current date
-                    var unixTimeStamp = data.current.dt
-                    var date = new Date(unixTimeStamp * 1000);
-                    var formDate = "Date: " +date.getDate()+
-                    "/"+(date.getMonth()+1)+
-                    "/"+date.getFullYear()
+                    // var unixTimeStamp = data.current.dt
+                    // var date = new Date(unixTimeStamp * 1000);
+                    // var formDate = "Date: " +date.getDate()+
+                    // "/"+(date.getMonth()+1)+
+                    // "/"+date.getFullYear()
 
 
                     savedCities.push(savedCityObject);
